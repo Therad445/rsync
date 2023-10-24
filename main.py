@@ -1,16 +1,21 @@
-# This is a sample Python script.
+# main.py
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from tkinter import Tk
+from tkinter_app import RsyncGUI
+
+# if "DISPLAY" not in os.environ:
+#             # install and start Xvfb
+#             os.system("Xvfb :99 -screen 0 1024x768x16 &")
+#             os.environ["DISPLAY"] = ":99"
+# Xvfb :99 -screen 0 1024x768x16 &
+# DISPLAY"] = ":99
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def main():
+    root = Tk()
+    rsync_gui = RsyncGUI(root)
+    root.mainloop()
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    main()
