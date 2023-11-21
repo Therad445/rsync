@@ -13,7 +13,7 @@ from tkinter_app import RsyncGUI
 
 def main():
     root = Tk()
-    rsync_gui = RsyncGUI(root)
+    RsyncGUI(root)
     root.mainloop()
 
 
