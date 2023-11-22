@@ -20,5 +20,6 @@
 
 Документация содержится в папке docs. К проекту составлены техническое задание, диаграммы и документ со стеком технологий разработки.
 
-* Также техническое задание доступно по [ссылке](https://docs.google.com/document/d/1StsOytKKxdNzkqL53khDtuGkok2NqmbuqQ-xjns3yyg/edit)
-* Также диаграммы доступны по [ссылке](https://miro.com/welcomeonboard/MmYyTlpieGZ3UVRpNnZON2tXUmZmclA4RWl6dHA4VGZWaFBXYVRMMFkydHduZnhDSXdtbWJ5OFZXc3phb083S3wzNDU4NzY0NTUzNzE0MzAzNzM5fDI=?share_link_id=768707787555) 
+* Техническое задание доступно по [ссылке](https://docs.google.com/document/d/1StsOytKKxdNzkqL53khDtuGkok2NqmbuqQ-xjns3yyg/edit)
+* Диаграммы доступны по [ссылке](https://miro.com/welcomeonboard/MmYyTlpieGZ3UVRpNnZON2tXUmZmclA4RWl6dHA4VGZWaFBXYVRMMFkydHduZnhDSXdtbWJ5OFZXc3phb083S3wzNDU4NzY0NTUzNzE0MzAzNzM5fDI=?share_link_id=768707787555)
+* Первый уровень тестирования доступен по [ссылке]()
