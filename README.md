@@ -22,4 +22,4 @@
 
 * Техническое задание доступно по [ссылке](https://docs.google.com/document/d/1StsOytKKxdNzkqL53khDtuGkok2NqmbuqQ-xjns3yyg/edit)
 * Диаграммы доступны по [ссылке](https://miro.com/welcomeonboard/MmYyTlpieGZ3UVRpNnZON2tXUmZmclA4RWl6dHA4VGZWaFBXYVRMMFkydHduZnhDSXdtbWJ5OFZXc3phb083S3wzNDU4NzY0NTUzNzE0MzAzNzM5fDI=?share_link_id=768707787555)
-* Первый уровень тестирования доступен по [ссылке]()
+* Первый уровень тестирования доступен по [ссылке](https://docs.google.com/document/d/1Qtuw4IeCl9R5EQwCw5BXzWQtINH-DDmxJU9Mas0V3wg/edit?usp=sharing)
