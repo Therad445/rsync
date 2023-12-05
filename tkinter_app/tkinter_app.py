@@ -9,14 +9,14 @@ import ipaddress
 
 class RsyncGUI:
     def __init__(self, master):
+        self.port_label = None
+        self.ip_label = None
+        self.user_label = None
         self.new_window_1 = None
         self.save_button = None
-        self.port_entry = None
-        self.port_label = None
-        self.ip_entry = None
-        self.ip_label = None
-        self.user_entry = None
-        self.user_label = None
+        self.port_entry = StringVar()
+        self.ip_entry = StringVar()
+        self.user_entry = StringVar()
         self.master = master
         master.title("Rsync GUI")
         self.code = StringVar()
@@ -69,7 +69,15 @@ class RsyncGUI:
         code = self.code.get()
         source_dir = self.source_entry.get()
         dest_dir = self.dest_entry.get()
-        rsync = Rsync(code, source_dir, dest_dir)
+        if code == "-avz":
+            user = self.user_entry
+            ip = self.ip_entry
+            port = self.port_entry
+        else:
+            user = ""
+            ip = ""
+            port = ""
+        rsync = Rsync(code, source_dir, dest_dir, user, ip, port)
         rsync.run()
         self.success_info()
 
@@ -107,9 +115,11 @@ class RsyncGUI:
         msg = "The IP address is filled in incorrectly!"
         mb.showerror("Error", msg)
 
+
     def show_error_copy(self):
         msg = "Fill in all the fields!"
         mb.showerror("Error", msg)
+
 
 
     def save_user_data(self):
