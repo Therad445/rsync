@@ -9,6 +9,7 @@ import ipaddress
 
 class RsyncGUI:
     def __init__(self, master):
+        self.new_window_1 = None
         self.save_button = None
         self.port_entry = None
         self.port_label = None
@@ -73,29 +74,29 @@ class RsyncGUI:
         self.success_info()
 
     def setting_server(self):
-        new_window_1 = Toplevel()
+        self.new_window_1 = Toplevel()
         # self.master = second_master
-        new_window_1.title("Setting server Rsync GUI")
+        self.new_window_1.title("Setting server Rsync GUI")
 
-        self.user_label = Label(new_window_1, text="User:")
+        self.user_label = Label(self.new_window_1, text="User:")
         self.user_label.grid(row=0, column=0)
 
-        self.user_entry = Entry(new_window_1, width=50)
+        self.user_entry = Entry(self.new_window_1, width=50)
         self.user_entry.grid(row=0, column=1)
 
-        self.ip_label = Label(new_window_1, text="Ip:")
+        self.ip_label = Label(self.new_window_1, text="Ip:")
         self.ip_label.grid(row=1, column=0)
 
-        self.ip_entry = Entry(new_window_1, width=50)
+        self.ip_entry = Entry(self.new_window_1, width=50)
         self.ip_entry.grid(row=1, column=1)
 
-        self.port_label = Label(new_window_1, text="Port:")
+        self.port_label = Label(self.new_window_1, text="Port:")
         self.port_label.grid(row=2, column=0)
 
-        self.port_entry = Entry(new_window_1, width=50)
+        self.port_entry = Entry(self.new_window_1, width=50)
         self.port_entry.grid(row=2, column=1)
 
-        self.save_button = Button(new_window_1, text="Save", command=self.save_user_data) #Нужно дописать когда будет функция
+        self.save_button = Button(self.new_window_1, text="Save", command=self.save_user_data) #Нужно дописать когда будет функция
         self.save_button.grid(row=3, column=1)
 
     def success_info(self):
