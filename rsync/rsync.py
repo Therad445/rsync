@@ -21,6 +21,7 @@ class Rsync:
         self.port = port
 
     def run(self):
-        rsync_cmd = ['rsync', self.code, "ssh -i ~/.ssh/backup", '--delete', self.source_dir, self.user + self.ip + self.dest_dir]
+        rsync_cmd = ['sudo', 'rsync',self.code, self.source_dir, self.user + self.ip + self.dest_dir]
         print(rsync_cmd)
         subprocess.run(rsync_cmd, check=True)
+

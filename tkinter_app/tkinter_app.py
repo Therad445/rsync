@@ -53,7 +53,7 @@ class RsyncGUI:
         self.local_radio = Radiobutton(master, text="Local copy", value="-azvh", variable=self.code)
         self.local_radio.grid(row=2, column=0)
 
-        self.remote_radio = Radiobutton(master, text="Remote copy", value="-avz", variable=self.code)
+        self.remote_radio = Radiobutton(master, text="Remote copy", value="-avzhe ssh", variable=self.code)
         self.remote_radio.grid(row=2, column=2)
 
     def browse_source(self):
@@ -122,7 +122,7 @@ class RsyncGUI:
             ipaddress.ip_address(self.ip_entry.get())
         except ValueError:
             self.show_error_ip()
-        if self.code_out == "-avz":
+        if self.code_out == "-avzhe ssh":
             self.user_out = self.user_entry.get()
             self.ip_out = self.ip_entry.get()
             self.port_out = self.port_entry.get()
