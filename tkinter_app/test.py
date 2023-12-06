@@ -1,27 +1,44 @@
-import unittest
-
-from tkinter_app import RsyncGUI
-from unittest.mock import Mock, patch
+# import unittest
+#
+# import time
+# from tkinter_app import RsyncGUI
+# from unittest.mock import Mock, patch
 from tkinter import Button, Tk
 
 
-class TestRsyncGUI(unittest.TestCase):
-    def setUp(self):
-        self.root = Tk()
-        self.gui = RsyncGUI(self.root)
+import unittest
+from unittest import mock
 
-    def test_copy(self):
-        # copy_mock = Mock()
-        # self.gui.copy_button.config()
-        # self.gui.copy_button.invoke()
-        # with patch.object(self.gui, self.gui.copy()) as mock_copy:
-        #     root = Tk()
-        #     copy_button = Button(root, text="Copy", command=self.gui.copy)
-        #     copy_button.invoke()
-        #     mock_copy.assert_called_once()
-        #     root.destroy()
-        copy_mock = Mock(wraps=self.gui.copy())
-        self.gui.copy_button.config(command=copy_mock)
-        self.gui.copy_button.invoke()
-        copy_mock.assert_called_once()
+from tkinter_app import RsyncGUI
 
+
+class RsyncGUITest(unittest.TestCase):
+
+	def setUp(self):
+		self.root = Tk()
+		with mock.patch('tkinter.Tk'):
+			self.rs = RsyncGUI(self.root)
+
+	def test_browse_source(self):
+		self.rs.browse_source()
+		self.assertEqual(self.rs.source_entry.get(), "")
+
+	def test_browse_dest(self):
+		self.rs.browse_dest()
+		self.assertEqual(self.rs.dest_entry.get(), "")
+
+	def test_copy_empty_fields(self):
+		self.rs.copy()
+		self.assertEqual(self.rs.show_error_copy_called, True)
+
+	# def test_copy_success(self):
+	# self.rs.source_entry.insert(0, "D:/OneDrive/Рабочий стол/Фото")
+	# self.rs.dest_entry.insert(0, "D:/Учеба")
+	# self.rs.copy()
+	# self.assertEqual(self.rs.show_error_copy_called, False)
+	# self.assertEqual(self.rs.success_info_called, True)
+
+	# def test_setting_server_save(self):
+	# self.rs.ip_entry.insert(0, "127.0.0.1")
+	# self.rs.save_user_data()
+	# # test your expected behavior when saving user data, such as updating attributes or checking results
