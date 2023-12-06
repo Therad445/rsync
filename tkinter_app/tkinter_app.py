@@ -9,6 +9,9 @@ import ipaddress
 
 class RsyncGUI:
     def __init__(self, master):
+        self.user_out = ""
+        self.ip_out = ""
+        self.port_out = ""
         self.port_label = None
         self.ip_label = None
         self.user_label = None
@@ -21,6 +24,7 @@ class RsyncGUI:
         master.title("Rsync GUI")
         self.code = StringVar()
         self.code.set(NONE)
+        self.code_out = None
 
         self.source_label = Label(master, text="Source:")
         self.source_label.grid(row=0, column=0)
@@ -66,18 +70,10 @@ class RsyncGUI:
         if len(self.source_entry.get()) == 0 and len(self.dest_entry.get()) == 0:
             self.show_error_copy()
             return
-        code = self.code.get()
+        self.code_out = self.code.get()
         source_dir = self.source_entry.get()
         dest_dir = self.dest_entry.get()
-        if code == "-avz":
-            user = self.user_entry
-            ip = self.ip_entry
-            port = self.port_entry
-        else:
-            user = ""
-            ip = ""
-            port = ""
-        rsync = Rsync(code, source_dir, dest_dir, user, ip, port)
+        rsync = Rsync(self.code_out, source_dir, dest_dir, self.user_out, self.ip_out, self.port_out)
         rsync.run()
         self.success_info()
 
@@ -121,9 +117,16 @@ class RsyncGUI:
         mb.showerror("Error", msg)
 
 
-
     def save_user_data(self):
         try:
             ipaddress.ip_address(self.ip_entry.get())
         except ValueError:
             self.show_error_ip()
+        if self.code_out == "-avz":
+            self.user_out = self.user_entry.get()
+            self.ip_out = self.ip_entry.get()
+            self.port_out = self.port_entry.get()
+        else:
+            self.user_out = ""
+            self.ip_out = ""
+            self.port_out = ""
