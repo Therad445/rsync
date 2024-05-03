@@ -1,4 +1,4 @@
-# softwareconstruction_rsyncgui
+# rsync
 # Rsync Python GUI
 Данное приложение способно на копировать данные с ПК на удалённый сервер, с помощью Rsync. По сути это GUI для Rsync.
 
